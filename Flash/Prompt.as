@@ -2,9 +2,7 @@ package  {
 	
 	import flash.display.Sprite;
 	import flash.display.Shape;
-	import flash.text.TextField; 
-	import flash.text.TextFormat;
-	import flash.text.TextFieldType;
+	import flash.text.*;
 	import flash.events.KeyboardEvent;
 	
 	public class Prompt extends Sprite {
@@ -34,12 +32,14 @@ package  {
 			format = new TextFormat();
 			format.color = 0xFFFFFF;
 			format.font = "monospace"; 
+			format.align = TextFormatAlign.CENTER;
 
 			label = new TextField();
 			label.text = "Please verify your name: ";
+			
 			label.x = 12;
 			label.y = 12;
-			label.width = pW * ( properties.width * properties.spacing );
+			label.width = pW * ( properties.width * properties.spacing ) - 24;
 			label.setTextFormat(format);
 			addChild(label);
 
@@ -47,7 +47,7 @@ package  {
 			input.text = "";
 			input.x = 12;
 			input.y = 48;
-			input.width = pW * ( properties.width * properties.spacing );
+			input.width = pW * ( properties.width * properties.spacing ) - 24;
 			input.defaultTextFormat = format;
 			input.type = TextFieldType.INPUT
 			addChild(input);
