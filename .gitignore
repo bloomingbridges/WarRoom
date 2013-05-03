@@ -4,3 +4,4 @@ Flash/bin-debug/
 Flash/bin-release/
 
 .DS_Store
+.sublime
