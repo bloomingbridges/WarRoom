@@ -3,12 +3,11 @@ package  {
 	import flash.display.Sprite;
 	import flash.display.Shape;
 	
-	public class BlockUnit extends Sprite {
+	public class BlockUnit extends Shape {
 		
 		protected var w:Number;
 		protected var h:Number;
 
-		protected var block:Shape;
 		protected var colour:uint;
 		protected var lit:Boolean;
 
@@ -19,21 +18,19 @@ package  {
 			colour = 0x111111;
 			lit = highlight;
 
-			block = new Shape();
-			addChild(block);
-			drawBlock();
+			draw();
 
 		}
 
-		protected function drawBlock():void {
+		protected function draw():void {
 
 			if (lit)
-				block.graphics.beginFill(0xFFFFFF);
+				graphics.beginFill(0xFFFFFF);
 			else 
-				block.graphics.beginFill(colour);
+				graphics.beginFill(colour);
 
-			block.graphics.drawRect(0, 0, w, h);
-			block.graphics.endFill();
+			graphics.drawRect(0, 0, w, h);
+			graphics.endFill();
 
 		}
 
