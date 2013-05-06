@@ -35,7 +35,7 @@ package  {
 			format.align = TextFormatAlign.CENTER;
 
 			label = new TextField();
-			label.text = "Please verify your name: ";
+			label.text = "Please verify your email address";
 			
 			label.x = 12;
 			label.y = 12;
