@@ -1,4 +1,4 @@
-package {
+package retro {
 	
 	import flash.display.DisplayObject;
 	import flash.display.Sprite;
@@ -51,6 +51,7 @@ package {
 		private function distort(img:Sprite):void {
 			Tweener.addTween(img, {
 					y: randRange(_centerY-3, _centerY+3), 			// ranomize y shift
+					x: randRange(_centerX-3, _centerX+3), 			// ranomize y shift
 					time:randRange(1,2) /10, 		// randomize time
 					alpha: randRange(8,10) /10,		// randomize alpha
 					transition:"easeInOutSine",

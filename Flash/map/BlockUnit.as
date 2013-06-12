@@ -1,4 +1,4 @@
-package  {
+package map {
 	
 	import flash.display.Sprite;
 	import flash.display.Shape;

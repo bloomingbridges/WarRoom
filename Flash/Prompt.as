@@ -1,9 +1,11 @@
-package  {
+package {
 	
 	import flash.display.Sprite;
 	import flash.display.Shape;
 	import flash.text.*;
 	import flash.events.KeyboardEvent;
+
+	import map.BlockUnit;
 	
 	public class Prompt extends Sprite {
 

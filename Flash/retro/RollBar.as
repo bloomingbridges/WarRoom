@@ -1,4 +1,4 @@
-package {
+package retro {
 	
 	import flash.display.MovieClip;
 	import flash.display.Shape;	
