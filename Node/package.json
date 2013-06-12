@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "author": "James <j@lostwith.me>",
   "private": "true",
+  "main":"./main.js",
   "dependencies": {
     "nodemailer": "*"
   },

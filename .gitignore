@@ -3,5 +3,8 @@ Flash/bin/
 Flash/bin-debug/
 Flash/bin-release/
 
+Node/node_modules/
+Node/credentials.js
+
 .DS_Store
 .sublime
