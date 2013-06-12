@@ -1,0 +1,12 @@
+{
+  "name": "WarRoom",
+  "version": "0.0.1",
+  "author": "James <j@lostwith.me>",
+  "private": "true",
+  "dependencies": {
+    "nodemailer": "*"
+  },
+  "engines": {
+    "node":"0.8.15"
+  }
+}
