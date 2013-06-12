@@ -32,6 +32,7 @@ var testEmail = {
 
 var server = net.createServer(function(socket) {
   mySocket = socket;
+  mySocket.setEncoding('utf8');
   mySocket.on("connect", onConnect);
   mySocket.on("data", onData);
 });
@@ -40,9 +41,11 @@ function onConnect() {
 	console.log("=== Connection to Client established!");
 }
 
-function onData(details) {
+function onData(data) {
+	console.log(data.toString());
+	var details = JSON.parse(data.toString().slice(0,-1));
 	console.log(details);
-	sendEmail(null, 1000);
+	//sendEmail(null, 1000);
 	// TODO Make sure passphrase is correct ////////////////////////////////////
 	// TODO Process incoming data //////////////////////////////////////////////
 }
