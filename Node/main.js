@@ -4,6 +4,7 @@
 var net = require('net')
   , nodemailer = require('nodemailer')
   , http = require('http')
+  , connect = require('connect')
   , _ = require('underscore')
   , credentials = require("./credentials.js");
 
@@ -11,7 +12,8 @@ var net = require('net')
 // Globals /////////////////////////////////////////////////////////////////////
 
 var port = process.env.PORT || 6666
-	, mySocket;
+	, mySocket
+	, policy;
 
 var missiles = [];
 
@@ -55,9 +57,16 @@ function onConnect() {
 }
 
 function onData(data) {
-	console.log(data.toString());
-	var details = JSON.parse(data.toString().slice(0,-1));
-	missiles.push(details);
+	if (data == '<policy-file-request/>\0') {
+		console.log("Policy file requested..");
+		mySocket.end(policy + '\0');
+	} else {
+		console.log(data.toString());
+		var now = new Date().getTime();
+		var details = JSON.parse(data.toString().slice(0,-1));
+		details.arrival += now;
+		missiles.push(details);
+	}
 }
 
 
@@ -65,6 +74,7 @@ function onData(data) {
 
 function checkForImpact() {
 	var now = new Date().getTime();
+	//console.log("=== CHECK: " + now);
 	for (var i=0; i<missiles.length; i++) {
 		var m = missiles[i];
 		if (now >= m.arrival) {
@@ -130,7 +140,15 @@ function logMissiles() {
 
 // GO //////////////////////////////////////////////////////////////////////////
 
-server.listen(port, '127.0.0.1');
-console.log("=== TCP SERVER LISTENING ON PORT " + port + " YO!");
-setInterval(checkForImpact, 1000);
+require('fs').readFile(__dirname+"/public/crossdomain.xml", 'utf8', function (err, file) {
+	if (err) throw err;
+	policy = file;
+	server.listen(port);
+	console.log("=== TCP SERVER LISTENING ON PORT " + port + " YO!");
+	connect()
+	  .use(connect.static(__dirname+"/public"))
+	  .listen(8888);
+	console.log("=== SERVING FILES ON PORT 8888..");
+	setInterval(checkForImpact, 1000);
+});
 
