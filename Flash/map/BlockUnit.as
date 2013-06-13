@@ -9,12 +9,13 @@ package map {
 		protected var h:Number;
 
 		protected var colour:uint;
+		protected var alphaz:int;
 		protected var lit:Boolean;
 
-		public function BlockUnit(highlight:Boolean, bW = 2, bH = 3) {
+		public function BlockUnit(highlight:Boolean) {
 
-			w = bW;
-			h = bH;
+			w = WarRoom.bW;
+			h = WarRoom.bH;
 			colour = 0x111111;
 			lit = highlight;
 
