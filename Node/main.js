@@ -62,15 +62,33 @@ function onData(data) {
 		mySocket.end(policy + '\0');
 	} else {
 		console.log(data.toString());
-		var now = new Date().getTime();
 		var details = JSON.parse(data.toString().slice(0,-1));
-		details.arrival += now;
-		missiles.push(details);
+		if(validateAdress(details.email)) {
+			var now = new Date().getTime();
+			details.arrival += now;
+			missiles.push(details);
+		} else {
+			console.log("XXX INVALID EMAIL ADDRESS");
+		}
 	}
 }
 
 
 // Mail ////////////////////////////////////////////////////////////////////////
+
+function validateAdress(address) {
+	var ATPOS = address.indexOf('@')
+	  , POSTSTRING = "", AMOUNTDOTS = 0;
+	if (ATPOS >= 1) {
+		POSTSTRING = address.substr(ATPOS);
+		AMOUNTDOTS = POSTSTRING.split(".").length - 1;
+		console.log("=== VALIDATION RESULTS", "@: "+ATPOS, ".: "+AMOUNTDOTS);
+		if (AMOUNTDOTS > 0 && AMOUNTDOTS <= 2)
+			return true;
+		else return false;
+	} 
+	else return false;
+}
 
 function checkForImpact() {
 	var now = new Date().getTime();
@@ -94,7 +112,7 @@ function sendEmail(meta) {
 			console.log(error);
 		}
 		else {
-			console.log("=== MAIL HAS BEEN SENT SUCCESSFULLY :>");
+			console.log("=== MAIL HAS BEEN SENT SUCCESSFULLY!");
 			//console.log(response);
 		}
 	});
