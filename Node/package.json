@@ -5,7 +5,9 @@
   "private": "true",
   "main":"./main.js",
   "dependencies": {
-    "nodemailer": "*"
+    "nodemailer": "*",
+    "underscore": "*",
+    "connect":"*"
   },
   "engines": {
     "node":"0.8.15"
