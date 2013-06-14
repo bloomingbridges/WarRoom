@@ -4,6 +4,7 @@ package {
 	import flash.display.Shape;
 	import flash.text.*;
 	import flash.events.KeyboardEvent;
+	import flash.ui.Keyboard;
 
 	import map.BlockUnit;
 	
@@ -48,14 +49,25 @@ package {
 
 			input = new TextField();
 			input.text = "";
-			input.embedFonts = true;
+			input.maxChars = 48;
+			input.restrict = "A-Z a-z 0-9 \. \- \_ \@";
+			input.autoSize = TextFieldAutoSize.CENTER;
+			//input.embedFonts = true;
 			input.x = 12;
 			input.y = 48;
 			input.width = pW * ( properties.width * properties.spacing ) - 24;
 			input.defaultTextFormat = format;
-			input.type = TextFieldType.INPUT
+			input.setTextFormat(format);
+			input.type = TextFieldType.INPUT;
 			addChild(input);
 
+		}
+
+		public function doBackspace(e:KeyboardEvent) {
+			if (input.text.length > 0 && e.keyCode === Keyboard.BACKSPACE) {
+				var str:String = input.text;
+   				input.text = str.slice(0,(str.length-1));
+			}
 		}
 
 	}
