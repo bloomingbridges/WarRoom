@@ -33,7 +33,8 @@ package {
 
 			format = new TextFormat();
 			format.color = 0xFFFFFF;
-			format.font = "monospace"; 
+			format.size = 24;
+			format.font = "Mini Pixel-7"; 
 			format.align = TextFormatAlign.CENTER;
 
 			label = new TextField();
@@ -47,6 +48,7 @@ package {
 
 			input = new TextField();
 			input.text = "";
+			input.embedFonts = true;
 			input.x = 12;
 			input.y = 48;
 			input.width = pW * ( properties.width * properties.spacing ) - 24;
