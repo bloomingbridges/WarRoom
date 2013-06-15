@@ -1,3 +1,3 @@
 # CD /D D:\Code\WarRoom
-START Flash/WarRoom.swf
+START Flash/WarRoom.exe
 NODE Node/main.js

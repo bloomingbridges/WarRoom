@@ -32,10 +32,10 @@ var emailTemplate = {
 	html: ""
 };
 
-var emailReceiverTemplate = _.template("Evildoer <<%= email %>>");
+var emailReceiverTemplate = _.template("Gallery visitor <<%= email %>>");
 
 var emailBodyTemplate = _.template("<h1>Missile impact notification</h1>"
-	+ "<p>You killed <%= impact %> bugs, good man.</p>");
+	+ "<p>Dear visitor,\n This is an automated confirmation email informing you that the missile you launched killed around <%= impact %> people.</p>");
 
 // missiles.push({
 // 	impact:1000,
