@@ -41,6 +41,12 @@ package retro {
 			addChild(lines2);
 
 			this.cacheAsBitmap = true;
+
+			// var midLine:Shape = new Shape;
+			// midLine.graphics.beginFill(0xffffff);
+			// midLine.graphics.drawRect(0,900/2,1440,2);
+			// midLine.graphics.drawRect(1440/2,0,2,900);
+			// addChild(midLine);
 	
 		}
 

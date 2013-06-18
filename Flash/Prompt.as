@@ -10,7 +10,9 @@ package {
 	
 	public class Prompt extends Sprite {
 
-		public  var label:TextField;
+		public  var label0:TextField;
+		public  var label1:TextField;
+		public  var label2:TextField;
 		public  var input:TextField;
 		private var format:TextFormat;
 
@@ -29,23 +31,48 @@ package {
 				}
 			}
 
-			x = WarRoom.HALF_WIDTH - ( ( pW * (properties.width + properties.spacing) - properties.spacing ) / 2 );
-			y = 100 + ( 32 * (properties.height + properties.spacing) );
+			// x = WarRoom.HALF_WIDTH - ( ( pW * (properties.width + properties.spacing) - properties.spacing ) / 2 );
+			x = WarRoom.FULL_WIDTH / 2 - (( pW * (WarRoom.bW + WarRoom.bS) ) / 2);
+			y = WarRoom.FULL_HEIGHT / 2 - (( pH * (WarRoom.bH + WarRoom.bS) ) / 2);
+			// y = 100 + ( 32 * (properties.height + properties.spacing) );
 
 			format = new TextFormat();
 			format.color = 0xFFFFFF;
-			format.size = 24;
+			format.size = 36;
 			format.font = "Mini Pixel-7"; 
 			format.align = TextFormatAlign.CENTER;
 
-			label = new TextField();
-			label.text = "Please verify your email address";
-			
-			label.x = 12;
-			label.y = 12;
-			label.width = pW * ( properties.width * properties.spacing ) - 24;
-			label.setTextFormat(format);
-			addChild(label);
+			label0 = new TextField();
+			label0.text = "Actions have concequences.";
+			label0.x = 12;
+			label0.y = 6;
+			label0.width = pW * ( properties.width * properties.spacing ) - 24;
+			label0.setTextFormat(format);
+			addChild(label0);
+
+			format.size = 24;
+
+			label1 = new TextField();
+			label1.text = "Enter your email. No Spam, we promise.";
+
+			label1.x = 12;
+			label1.y = 45;
+			label1.width = pW * ( properties.width * properties.spacing ) - 24;
+			label1.setTextFormat(format);
+			addChild(label1);
+
+			format.size = 18;
+
+			label2 = new TextField();
+			label2.text = "Press ENTER to continue";
+
+			label2.x = 12;
+			label2.y = 114;
+			label2.width = pW * ( properties.width * properties.spacing ) - 24;
+			label2.setTextFormat(format);
+			addChild(label2);
+
+			format.size = 24;
 
 			input = new TextField();
 			input.text = "";
@@ -54,7 +81,7 @@ package {
 			input.autoSize = TextFieldAutoSize.CENTER;
 			//input.embedFonts = true;
 			input.x = 12;
-			input.y = 48;
+			input.y = 78;
 			input.width = pW * ( properties.width * properties.spacing ) - 24;
 			input.defaultTextFormat = format;
 			input.setTextFormat(format);
@@ -66,7 +93,7 @@ package {
 		public function doBackspace(e:KeyboardEvent) {
 			if (input.text.length > 0 && e.keyCode === Keyboard.BACKSPACE) {
 				var str:String = input.text;
-   				input.text = str.slice(0,(str.length-1));
+   				input.text = str.slice(0,str.length);
 			}
 		}
 

@@ -17,6 +17,7 @@ package map {
 			w = WarRoom.bW;
 			h = WarRoom.bH;
 			colour = 0x111111;
+			alpha = 0.8;
 			lit = highlight;
 
 			draw();
@@ -25,10 +26,16 @@ package map {
 
 		protected function draw():void {
 
-			if (lit)
+			if (lit) {
+
 				graphics.beginFill(0xFFFFFF);
-			else 
+				alpha = 1;
+			
+			} else {
+
 				graphics.beginFill(colour);
+			
+			} 
 
 			graphics.drawRect(0, 0, w, h);
 			graphics.endFill();
