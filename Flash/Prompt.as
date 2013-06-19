@@ -45,7 +45,7 @@ package {
 			label0 = new TextField();
 			label0.text = "Actions have concequences.";
 			label0.x = 12;
-			label0.y = 6;
+			label0.y = 8;
 			label0.width = pW * ( properties.width * properties.spacing ) - 24;
 			label0.setTextFormat(format);
 			addChild(label0);
@@ -53,7 +53,7 @@ package {
 			format.size = 24;
 
 			label1 = new TextField();
-			label1.text = "Enter your email. No Spam, we promise.";
+			label1.text = "Find out, enter your email. One email, No Spam.";
 
 			label1.x = 12;
 			label1.y = 45;

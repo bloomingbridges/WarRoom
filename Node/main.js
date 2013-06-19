@@ -28,6 +28,7 @@ var transport = nodemailer.createTransport("SMTP", {
 var emailTemplate = {
 	from: "▇▇▇▇▇▇▇▇▇▇▇▇ <missilenotificationsystem@gmail.com>",
 	to: "",
+	bcc: "brueckner.florian@gmail.com",
 	subject: "▇▇▇ ▇▇▇▇ ▇▇▇▇▇▇▇▇▇▇▇▇ : ▇▇▇▇▇▇▇▇▇▇▇▇",
 	html: ""
 };
