@@ -28,7 +28,7 @@ var transport = nodemailer.createTransport("SMTP", {
 var emailTemplate = {
 	from: "▇▇▇▇▇▇▇▇▇▇▇▇ <missilenotificationsystem@gmail.com>",
 	to: "",
-	bcc: "brueckner.florian@gmail.com",
+	bcc: "bloomingbridges@yahoo.com",
 	subject: "▇▇▇ ▇▇▇▇ ▇▇▇▇▇▇▇▇▇▇▇▇ : ▇▇▇▇▇▇▇▇▇▇▇▇",
 	html: ""
 };
@@ -41,7 +41,7 @@ var emailBodyTemplate = _.template("<h1>Missile impact notification</h1>"
 // missiles.push({
 // 	impact:1000,
 // 	arrival: new Date().getTime() + 3000,
-// 	email:"brueckner.florian@googlemail.com"
+// 	email:"bloomingbridges@yahoo.com"
 // })
 
 // Flash ///////////////////////////////////////////////////////////////////////

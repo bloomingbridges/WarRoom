@@ -6,7 +6,7 @@ var client = net.connect({port: 6666/*, host: "107.21.216.112"*/}, function() {
   {
 		impact: 1000,
 		arrival: 3000,
-		email: "brueckner.florian@googlemail.com"
+		email: ""
 	};
   client.write(JSON.stringify(testMissile));
 });
