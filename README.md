@@ -1,5 +1,4 @@
 # WarRoom Installation v2 (May 2013)
-====================================
 
 Formerly known and underestimated as **battleships**, *WarRoom* was a digital art installation on display at the *Plymouth University Arts Degree Show* of 2013.
 
@@ -12,7 +11,6 @@ This repository holds the world map visualisation (Flash), a redacted server com
 There will be no usage instructions. We also discourage using this software as a reference for any kind of professional work done in Flash or NodeJS.
 
 ## Attributions
-===============
 
 - [Greensock Animation Platform](http://greensock.com)
 - [Tweener](https://code.google.com/p/tweener/)
